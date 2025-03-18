@@ -1,0 +1,213 @@
+"""1.1.3 Importando un módulo
+Para que un módulo sea utilizable, hay que importarlo (piensa en ello como sacar un libro del estante). La importación de un módulo se realiza mediante una instrucción llamada import. Nota: import es también una palabra clave reservada (con todas sus implicaciones).
+
+Supongamos que deseas utilizar dos entidades proporcionadas por el módulo math:
+
+Un símbolo (constante) que representa un valor preciso (tan preciso como sea posible usando aritmética de punto flotante doble) de π (aunque usar una letra griega para nombrar una variable es totalmente posible en Python, el símbolo se llama pi - es una solución más conveniente, especialmente para esa parte del mundo que ni tiene ni va a usar un Teclado Griego).
+Una función llamada sin() (el equivalente informático de la función matemática seno).
+
+Ambas entidades están disponibles a través del módulo math, pero la forma en que se pueden usar depende en gran medida de como se haya realizado la importación.
+
+La forma más sencilla de importar un módulo en particular es usar la instrucción para importar de la siguiente manera:
+
+
+import math
+ 
+La cláusula contiene:
+
+La palabra reservada import;
+El nombre del módulo que se va a importar.
+La instrucción puede colocarse en cualquier parte del código, pero debe colocarse antes del primer uso de cualquiera de las entidades del módulo.
+
+Si quiere (o tiene que) importar más de un módulo, puede hacerlo repitiendo la cláusula import (preferida):
+
+
+import math
+import sys
+o enumerando los módulos después de la palabra clave reservada import, como aquí:
+
+
+import math, sys
+La instrucción importa dos módulos, primero uno llamado math y luego un segundo llamado sys.
+
+La lista de módulos puede ser arbitrariamente larga."""
+
+"""1.1.4 Namespace
+Para continuar, debes familiarizarte con un término importante: namespace.No te preocupes, no entraremos en detalles - esta explicación será lo más breve posible.
+
+Un namespace es un espacio (entendido en un contexto no físico) en el que existen algunos nombres y los nombres no entran en conflicto entre sí (es decir, no hay dos objetos diferentes con el mismo nombre). Podemos decir que cada grupo social es un namespace - el grupo tiende a nombrar a cada uno de sus miembros de una manera única (por ejemplo, los padres no darían a sus hijos el mismo nombre).
+
+
+Esta singularidad se puede lograr de muchas maneras, por ejemplo, mediante el uso de apodos junto con los nombres (funcionará dentro de un grupo pequeño como una clase en una escuela) o asignando identificadores especiales a todos los miembros del grupo (el número de Seguro Social de EE. UU. es un buen ejemplo de tal práctica).
+
+Dentro de un determinado namespace, cada nombre debe permanecer único. Esto puede significar que algunos nombres pueden desaparecer cuando cualquier otra entidad de un nombre ya conocido ingresa al namespace. Mostraremos como funciona y como controlarlo, pero primero, volvamos a las importaciones.
+
+Si el módulo de un nombre especificado existe y es accesible (un módulo es de hecho un archivo fuente de Python), Python importa su contenido, se hacen conocidos todos los nombres definidos en el módulo, pero no ingresan al namespace del código.
+
+Esto significa que puedes tener tus propias entidades llamadas sin o pi y no serán afectadas en alguna manera por la importación.
+
+
+En este punto, es posible que te estes preguntando como acceder al pi el cual viene del módulo math.
+
+Para hacer esto, se debe de mandar llamar el pi con el nombre del módulo original."""
+
+
+"""1.1.5 Importando un módulo: continuación
+Este primer ejemplo no será muy avanzado - solo se desea imprimir el valor de sin(½π).
+
+Observa el código en el editor. Así es como se prueba.
+
+
+import math
+
+
+def sin(x):
+    if 2 * x == pi:
+        return 0.99999999
+    else:
+        return None
+
+
+pi = 3.14
+
+print(sin(pi/2))
+print(math.sin(math.pi/2))
+
+El código genera el valor esperado: 1.0.
+
+Observa el fragmento a continuación, esta es la forma en que se habilitan los nombres de pi y sin con el nombre de su módulo de origen:
+
+
+math.pi
+math.sin
+Es sencillo, se coloca:
+
+El nombre del módulo (math).
+Un punto (p,ej., .).
+El nombre de la entidad (pi).
+Tal forma indica claramente el namespace en el que existe el nombre.
+
+Nota: el uso de esto es obligatorio si un módulo ha sido importado con la instrucción import. No importa si alguno de los nombres del código y del namespace del módulo están en conflicto o no.
+
+Nota: el eliminar cualquiera de las dos indicaciones del nombre del módulo hará que el código sea erróneo. No hay otra forma de entrar al namespace de math si se hizo lo siguiente:
+
+
+import math
+Ahora te mostraremos cómo pueden dos namespaces (el tuyo y el del módulo) coexistir.
+
+Echa un vistazo al ejemplo en la ventana del editor.
+
+Hemos definido nuestros propios pi y sin aquí.
+
+import math
+
+
+def sin(x):
+    if 2 * x == pi:
+        return 0.99999999
+    else:
+        return None
+
+
+pi = 3.14
+
+print(sin(pi/2))
+print(math.sin(math.pi/2))
+
+Ejecuta el programa. El código debe producir la siguiente salida:
+
+0.99999999
+1.0
+Output
+Como puedes ver, las entidades no se afectan entre sí.
+
+En el segundo método, la sintaxis del import señala con precisión que entidad (o entidades) del módulo son aceptables en el código:
+
+
+from math import pi
+La instrucción consta de los siguientes elementos:
+
+La palabra clave reservada from.
+El nombre del módulo a ser (selectivamente) importado.
+La palabra clave reservada import.
+El nombre o lista de nombres de la entidad o entidades las cuales estan siendo importadas al namespace.
+La instrucción tiene este efecto:
+
+Las entidades listadas son las únicas que son importadas del módulo indicado.
+Los nombres de las entidades importadas pueden ser accedidas dentro del código sin especificar el nombre del módulo de origen.
+Nota: no se importan otras entidades, únicamente las especificadas. Además, no se pueden importar entidades adicionales utilizando - una línea como esta:
+
+
+print(math.e)
+Esto ocasionará un error, (e es la constante de Euler: 2.71828...)
+
+Reescribamos el código anterior para incorporar esta nueva técnica.
+
+Aquí está:
+
+El resultado debe de ser el mismo que el anterior, se han empleado las mismas entidades: 1.0. Copia y pega el código en el editor, y ejecuta el programa.
+
+¿El código parece más simple? Quizás, pero el aspecto no es el único efecto de este tipo de importación. Veamos más a detalle esto.
+
+Observa el código en el editor. Analízalo cuidadosamente:
+
+La línea 01: lleva a cabo la importación selectiva.
+La línea 03: hace uso de las entidades importadas y obtiene el resultado esperado (1.0).
+Las líneas 05 a la 12: redefinen el significado de pi y sin - en efecto, reemplazan las definiciones originales (importadas) dentro del namespace del código.
+La línea 15: retorna 0.99999999, lo cual confirma nuestras conclusiones.
+
+
+from math import sin, pi
+
+print(sin(pi / 2))
+
+pi = 3.14
+
+
+def sin(x):
+    if 2 * x == pi:
+        return 0.99999999
+    else:
+        return None
+
+Hagamos otra prueba. Observa el código a continuación:
+
+pi = 3.14
+
+
+def sin(x):
+    if 2 * x == pi:
+        return 0.99999999
+    else:
+        return None
+
+
+print(sin(pi / 2))
+
+from math import sin, pi
+
+print(sin(pi / 2))
+
+
+Aquí, se ha invertido la secuencia de las operaciones del código:
+
+Las líneas del 01 al 08: definen nuestro propio pi y sin.
+La línea 11: hace uso de ellas (0.99999999 aparece en pantalla).
+La línea 13: lleva a cabo la importación - los símbolos importados reemplazan sus definiciones anteriores dentro del namespace.
+La línea 15: retorna 1.0 como resultado."""
+
+from math import sin, pi
+
+print(sin(pi / 2))
+
+pi = 3.14
+
+
+def sin(x):
+    if 2 * x == pi:
+        return 0.99999999
+    else:
+        return None
+
+
+print(sin(pi / 2))
