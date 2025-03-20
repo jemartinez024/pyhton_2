@@ -257,3 +257,135 @@ Observa el código en el editor. Este programa generará una línea que consta d
 
 
 """
+
+
+
+
+"""Tanto randrange como randint pertenecen al módulo random en Python y sirven para generar números aleatorios, pero tienen diferencias clave.
+
+1️⃣ randint(a, b)
+Genera un número entero aleatorio entre a y b, incluyendo ambos extremos.
+
+📌 Sintaxis:
+
+random.randint(a, b)
+
+📌 Ejemplo:
+
+import random
+
+num = random.randint(1, 10)
+print(num)  # Puede imprimir cualquier número del 1 al 10 (incluyendo ambos extremos)
+
+✅ Incluye tanto 1 como 10 en el rango de valores posibles.
+
+2️⃣ randrange(start, stop, step)
+Genera un número entero aleatorio dentro de un rango, pero excluye el límite superior (stop).
+Además, permite especificar un step (incremento).
+
+📌 Sintaxis:
+
+random.randrange(start, stop, step)
+
+📌 Ejemplo sin step:
+
+import random
+
+num = random.randrange(1, 10)  
+print(num)  # Puede imprimir un número entre 1 y 9 (NO incluye el 10)
+
+✅ Incluye 1, pero NO el 10.
+
+📌 Ejemplo con step:
+
+import random
+
+num = random.randrange(1, 10, 2)  # Solo tomará números impares: 1, 3, 5, 7, 9
+print(num)
+
+✅ Incluye números dentro del rango con incrementos de 2 (1, 3, 5, 7, 9).
+
+🔎 Diferencias clave
+
+Función	                    Incluye el límite superior	      Soporta step
+randint(a, b)	                ✅ Sí (incluye b)	               ❌ No
+randrange(start, stop, step)	❌ No (excluye stop)	             ✅ Sí
+
+📌 Ejemplo de comparación:
+
+import random
+
+print(random.randint(1, 10))    # Puede imprimir: 1, 2, 3, ..., 10
+print(random.randrange(1, 10))  # Puede imprimir: 1, 2, 3, ..., 9
+
+📌 ¿Cuándo usar cada una?
+
+✔ Si quieres un número aleatorio dentro de un rango exacto, usa randint().
+✔ Si necesitas un número con un salto específico (por ejemplo, solo pares o impares), usa randrange()."""
+
+
+
+"""🔹 choice(seq)
+📌 Devuelve un solo elemento aleatorio de una secuencia (lista, tupla, cadena, etc.).
+
+📌 Sintaxis:
+
+random.choice(seq)
+
+📌 Ejemplo:
+
+import random
+
+colores = ["rojo", "azul", "verde", "amarillo"]
+color_aleatorio = random.choice(colores)
+
+print(color_aleatorio)  # Puede imprimir "rojo", "azul", "verde" o "amarillo"
+✅ Usar choice() es útil cuando solo necesitas seleccionar UN elemento al azar."""
+
+
+
+"""🔹 sample(seq, k)
+📌 Devuelve una lista con k elementos aleatorios SIN repetición.
+
+📌 Sintaxis:
+
+random.sample(seq, k)
+
+📌 Donde:
+
+seq: La secuencia de la que se seleccionarán los elementos.
+k: El número de elementos a seleccionar (debe ser menor o igual a la cantidad total de elementos en seq).
+
+📌 Ejemplo:
+
+import random
+
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+seleccion = random.sample(numeros, 3)
+
+print(seleccion)  # Puede imprimir algo como [3, 7, 1]
+✅ Los elementos en la lista de salida no se repiten.
+❌ Si k es mayor que la longitud de seq, Python generará un error.
+
+📌 Diferencias clave entre choice() y sample()
+
+Función	     ¿Cuántos elementos selecciona?	     ¿Permite repetir elementos?
+choice()	   1 solo elemento	                   No aplica (solo selecciona uno)
+sample()	   k elementos	                       ❌ No (sin repetición)
+
+🔹 ¿Cuándo usar cada una?
+✔ Si solo necesitas elegir UN elemento al azar, usa choice().
+✔ Si necesitas varios elementos sin repetición, usa sample().
+
+📌 Ejemplo de comparación:
+
+import random
+
+frutas = ["manzana", "banana", "cereza", "durazno", "pera"]
+
+# Un solo elemento aleatorio
+print(random.choice(frutas))  # Ejemplo: "banana"
+
+# Tres elementos aleatorios sin repetición
+print(random.sample(frutas, 3))  # Ejemplo: ['pera', 'cereza', 'manzana']"""
+
