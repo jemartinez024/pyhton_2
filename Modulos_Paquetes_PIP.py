@@ -389,3 +389,228 @@ print(random.choice(frutas))  # Ejemplo: "banana"
 # Tres elementos aleatorios sin repetición
 print(random.sample(frutas, 3))  # Ejemplo: ['pera', 'cereza', 'manzana']"""
 
+"""1.2.6 Funciones selectas del módulo platform
+La función platform
+El módulo platform permite acceder a los datos de la plataforma subyacente, es decir, hardware, sistema operativo e información sobre la versión del intérprete.
+
+Existe también una función que puede mostrar todas las capas subyacentes en un solo vistazo, llamada platform. Simplemente devuelve una cadena que describe el entorno; por lo tanto, su salida está más dirigida a los humanos que al procesamiento automatizado (lo verás pronto).
+
+Así es como se puede invocar:
+
+
+platform(aliased = False, terse = False)
+ 
+Y ahora:
+
+aliased → cuando se establece a True (o cualquier valor distinto a cero) puede hacer que la función presente los nombres de capa subyacentes alternativos en lugar de los comunes.
+terse → cuando se establece a True (o cualquier valor distinto a cero) puede convencer a la función de presentar una forma más breve del resultado (si lo fuera posible).
+Ejecutamos el programa:
+
+
+from platform import platform
+ 
+print(platform())
+print(platform(1))
+print(platform(0, 1))
+ 
+usando tres plataformas diferentes, esto es lo que se obtuvo:
+
+Intel x86 + Windows ® Vista (32 bit):
+Windows-Vista-6.0.6002-SP2
+Windows-Vista-6.0.6002-SP2
+Windows-Vista
+Output
+Intel x86 + Gentoo Linux (64 bit):
+Linux-3.18.62-g6-x86_64-Intel-R-_Core-TM-_i3-2330M_CPU_@_2.20GHz-with-gentoo-2.3
+Linux-3.18.62-g6-x86_64-Intel-R-_Core-TM-_i3-2330M_CPU_@_2.20GHz-with-gentoo-2.3
+Linux-3.18.62-g6-x86_64-Intel-R-_Core-TM-_i3-2330M_CPU_@_2.20GHz-with-glibc2.3.4
+Output
+Raspberry PI2 + Raspbian Linux (32 bit)
+Linux-4.4.0-1-rpi2-armv7l-with-debian-9.0
+Linux-4.4.0-1-rpi2-armv7l-with-debian-9.0
+Linux-4.4.0-1-rpi2-armv7l-with-glibc2.9
+Output
+También puedes ejecutar el programa en el IDLE de tu máquina local para verificar que salida tendrá.
+
+La función machine
+En ocasiones, es posible que solo se desee conocer el nombre genérico del procesador que ejecuta el sistema operativo junto con Python y el código, una función llamada machine() te lo dirá. Como anteriormente, la función devuelve una cadena.
+
+Nuevamente, ejecutamos el programa:
+
+
+from platform import machine
+ 
+print(machine())
+en tres plataformas diferentes:
+
+Intel x86 + Windows ® Vista (32 bit):
+x86
+Output
+Intel x86 + Gentoo Linux (64 bit):
+x86_64
+Output
+Raspberry PI2 + Raspbian Linux (32 bit):
+armv7l
+Output
+La función processor
+La función processor() devuelve una cadena con el nombre real del procesador (si lo fuese posible).
+
+Una vez más, ejecutamos el programa:
+
+
+from platform import processor
+ 
+print(processor())
+en tres plataformas diferentes:
+
+Intel x86 + Windows ® Vista (32 bit):
+x86
+Output
+Intel x86 + Gentoo Linux (64 bit):
+Intel(R) Core(TM) i3-2330M CPU @ 2.20GHz
+Output
+Raspberry PI2 + Raspbian Linux (32 bit):
+armv7l
+Output
+Prueba esto en tu máquina local.
+
+La función system
+Una función llamada system() devuelve el nombre genérico del sistema operativo en una cadena.
+
+
+from platform import system
+ 
+print(system())
+ 
+Nuestras plataformas de ejemplo se presentan de la siguiente manera:
+
+Intel x86 + Windows ® Vista (32 bit):
+Windows
+Output
+Intel x86 + Gentoo Linux (64 bit):
+Linux
+Output
+Raspberry PI2 + Raspbian Linux (32 bit):
+Linux
+Output
+La función version
+La versión del sistema operativo se proporciona como una cadena por la función version().
+
+
+from platform import version
+ 
+print(version())
+ 
+Ejecuta el código y verifica su salida. Esto es lo que tenemos:
+
+Intel x86 + Windows ® Vista (32 bit):
+6.0.6002
+Output
+Intel x86 + Gentoo Linux (64 bit):
+#1 SMP PREEMPT Fri Jul 21 22:44:37 CEST 2017
+Output
+Raspberry PI2 + Raspbian Linux (32 bit):
+#1 SMP Debian 4.4.6-1+rpi14 (2016-05-05)
+Output
+Las funciones python_implementation y python_version_tuple
+Si necesitas saber que versión de Python está ejecutando tu código, puedes verificarlo utilizando una serie de funciones dedicadas, aquí hay dos de ellas:
+
+python_implementation() → devuelve una cadena que denota la implementación de Python (espera CPython aquí, a menos que decidas utilizar cualquier rama de Python no canónica).
+python_version_tuple() → devuelve una tupla de tres elementos la cual contiene:
+La parte mayor de la versión de Python.
+La parte menor.
+El número del nivel de parche.
+
+from platform import python_implementation, python_version_tuple
+
+print(python_implementation())
+
+for atr in python_version_tuple():
+print(atr)
+
+Nuestro programa de ejemplo produjo el siguiente resultado:
+
+CPython
+3
+7
+7
+Output
+Es muy probable que tu versión de Python sea diferente.
+"""
+
+"""1.2.7 Índice de Módulos en Python
+Aquí solo hemos cubierto los conceptos básicos de los módulos de Python. Los módulos de Python conforman su propio universo, en el que Python es solo una galaxia, y nos aventuraríamos a decir que explorar las profundidades de estos módulos puede llevar mucho más tiempo que familiarizarse con Python “puro”.
+
+Además, la comunidad de Python en todo el mundo crea y mantiene cientos de módulos adicionales utilizados en aplicaciones muy específicas como la genética, la psicología o incluso la astrología.
+
+Estos módulos no están (y no serán) distribuidos junto con Python, o a través de canales oficiales, lo que hace que el universo de Python sea más amplio, casi infinito.
+
+Puedes leer sobre todos los módulos estándar de Python aquí: https://docs.python.org/3/py-modindex.html.
+
+
+No te preocupes - no necesitarás todos estos módulos. Muchos de ellos son muy específicos.
+
+Todo lo que se necesita hacer es encontrar los módulos que se desean y aprender a cómo usarlos. Es fácil.
+
+En la siguiente sección veremos algo más. Te mostraremos cómo escribir tu propio módulo."""
+
+
+
+"""
+1.2.8 RESUMEN DE SECCIÓN
+1. Una función llamada dir() puede mostrarte una lista de las entidades contenidas dentro de un módulo importado. Por ejemplo:
+
+
+import os
+dir(os)
+Imprime una lista de todo el contenido del módulo os el cual, puedes usar en tu código.
+
+2. El módulo math contiene más de 50 funciones y constantes que realizan operaciones matemáticas (como sine(), pow(), factorial()) o aportando valores importantes (como π y la constante de Euler e).
+
+3. El módulo random agrupa más de 60 entidades diseñadas para ayudarte a usar números pseudoaleatorios. No olvides el prefijo “pseudo”, ya que no existe un número aleatorio real cuando se trata de generarlos utilizando los algoritmos de la computadora.
+
+4. El módulo platform contiene alrededor de 70 funciones que te permiten sumergirte en las capas subyacentes del sistema operativo y el hardware. Usarlos te permite aprender más sobre el entorno en el que se ejecuta tu código.
+
+5. El Índice de Módulos de Python https://docs.python.org/3/py-modindex.html es un directorio de módulos impulsado por la comunidad disponible en el universo de Python. Si deseas encontrar un módulo que se adapte a tus necesidades, comienza tu búsqueda allí."""
+
+
+
+"""
+1.2.9 CUESTIONARIO DE SECCIÓN
+Pregunta 1: ¿Cuál es el valor esperado de la variable result después de que se ejecuta el siguiente código?
+
+import math
+result = math.e == math.exp(1)
+Ocultar
+Verdadero
+Pregunta 2: (Completa el enunciado) Establecer la semilla del generador con el mismo valor cada vez que se ejecuta tu programa garantiza que ...
+
+Ocultar
+... los valores pseudoaleatorios emitidos desde el módulo random serán exactamente los mismos.
+
+Pregunta 3: ¿Cuál de las funciones del módulo platform utilizarías para determinar el nombre del CPU que corre dentro de tu computadora?
+
+Ocultar
+La función processor().
+
+Pregunta 4: ¿Cuál es el resultado esperado del siguiente fragmento de código?
+
+import platform
+print(len(platform.python_version_tuple()))
+Ocultar
+3
+"""
+
+from platform import platform, machine, processor, system, version, python_implementation, python_version_tuple
+
+print(platform())
+print(platform(1))
+print(platform(0, 1))
+print(machine())
+print(processor())
+print(system())
+print(version())
+print(python_implementation())
+
+for atr in python_version_tuple():
+    print(atr)
