@@ -7,4 +7,4 @@ def funA():
 
 if __name__ == "__main__":
   print("Prefiero ser un módulo.")
-
+print("Prefiero comer pollo.")
