@@ -1,27 +1,26 @@
-# -*- coding: ascii -*-
 import exsh
 
 def backup_config():
-    try:
-        # Definir el nombre del archivo
-        filename = "sw13_200_backup.cfg"
+    tftp_server = "192.168.13.49"
+    filename = "sw13_200.cfg"
+    temp_file = "/usr/local/tmp/backup_config.txt"
 
-        # Comandos para obtener la configuración detallada
-        commands = [
-            "show configuration"
-        ]
-        
-        # Guardar la salida de cada comando en el archivo
-        with open(filename, "w") as f:
-            for command in commands:
-                # Ejecutar el comando en el switch y capturar la salida
-                output = exsh.clicmd(command)
-                f.write(f"### Output of '{command}' ###\n")
-                f.write(output)
-                f.write("\n\n")
-        
-        print("Backup completado con exito y detalles añadidos al archivo.")
-    except Exception as e:
-        print("Error al realizar el backup: " + str(e))
+    # Comandos para capturar detalles de la configuración
+    commands = [
+        "show configuration",  # Configuración completa del switch
+    ]
+    
+    # Crear un archivo temporal con la configuración
+    with open(temp_file, "w") as f:
+        for command in commands:
+            output = exsh.clicmd(command, capture=True)
+            f.write(f"### Output of '{command}' ###\n")
+            f.write(output + "\n\n")
+    
+    # Enviar el archivo al servidor TFTP
+    tftp_command = f"upload configuration " + {tftp_server} + {filename} +" vr VR-Default "
+    exsh.clicmd(tftp_command, True)
+    
+    print("Backup completado con éxito y enviado al servidor TFTP.")
 
 backup_config()
