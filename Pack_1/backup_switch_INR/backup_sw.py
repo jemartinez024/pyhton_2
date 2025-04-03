@@ -1,33 +1,27 @@
-import cli
-import datetime
+# -*- coding: ascii -*-
+import exsh
 
-# Configuración del servidor TFTP y el archivo de respaldo
-TFTP_SERVER = "192.168.13.49"
-BACKUP_FILENAME = f"backup_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.cfg"
-LOG_FILE = "/usr/local/cfg/backup_log.txt"
-
-def log_message(message):
-    """Registra mensajes en un archivo de log en el switch."""
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(LOG_FILE, "a") as log:
-        log.write(f"{timestamp} - {message}\n")
-
-def backup_switch():
-    """Realiza el respaldo y lo envía al servidor TFTP."""
+def backup_config():
     try:
-        log_message("🔄 Iniciando respaldo...")
+        # Definir el nombre del archivo
+        filename = "sw13_200_backup.cfg"
 
-        # Guardar configuración en la memoria del switch
-        cli.execute("save configuration")
-        log_message("✅ Configuración guardada correctamente.")
-
-        # Enviar respaldo al servidor TFTP
-        cli.execute(f"upload configuration {TFTP_SERVER} {BACKUP_FILENAME}")
-        log_message(f"✅ Respaldo subido exitosamente a {TFTP_SERVER} como {BACKUP_FILENAME}.")
-
+        # Comandos para obtener la configuración detallada
+        commands = [
+            "show configuration"
+        ]
+        
+        # Guardar la salida de cada comando en el archivo
+        with open(filename, "w") as f:
+            for command in commands:
+                # Ejecutar el comando en el switch y capturar la salida
+                output = exsh.clicmd(command)
+                f.write(f"### Output of '{command}' ###\n")
+                f.write(output)
+                f.write("\n\n")
+        
+        print("Backup completado con exito y detalles añadidos al archivo.")
     except Exception as e:
-        error_message = f"❌ Error en el respaldo: {e}"
-        log_message(error_message)
+        print("Error al realizar el backup: " + str(e))
 
-# Ejecutar el respaldo
-backup_switch()
+backup_config()
