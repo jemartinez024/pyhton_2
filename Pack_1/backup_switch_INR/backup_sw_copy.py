@@ -10,3 +10,5 @@ def backup_config():
         print(f"Error al realizar el backup: {e}")
 
 backup_config()
+
+
