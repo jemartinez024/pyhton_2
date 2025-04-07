@@ -5,7 +5,7 @@ import exsh
 
 def backup_config():
     tftp_server = "192.168.13.49"
-    filename = "sw13_200.cfg"
+    filename = "sw11_200.cfg"
     temp_file = "/usr/local/tmp/backup_config.txt"
 
     # Comandos para capturar detalles de la configuración
@@ -27,4 +27,4 @@ def backup_config():
     print("Backup completado con éxito y enviado al servidor TFTP.")
 
 backup_config()
-backup_config()
+
