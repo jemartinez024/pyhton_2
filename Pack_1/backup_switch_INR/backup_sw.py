@@ -28,4 +28,3 @@ def backup_config():
 
 backup_config()
 
-backup_config()
