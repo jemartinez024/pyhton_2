@@ -6,3 +6,4 @@ print(suml(zeroes))
 print(prodl(ones))
 
 
+HABLAR BIEN EN PÚBLICO
