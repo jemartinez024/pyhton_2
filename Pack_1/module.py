@@ -29,4 +29,3 @@ if __name__ == "__main__":
   print(suml(my_list) == 15)
   print(prodl(my_list) == 120)
   
-backup_config()

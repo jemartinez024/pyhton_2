@@ -27,5 +27,3 @@ def backup_config():
     print("Backup completado con éxito y enviado al servidor TFTP.")
 
 backup_config()
-
-backup_config()
