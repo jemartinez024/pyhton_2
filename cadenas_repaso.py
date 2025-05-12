@@ -20,3 +20,22 @@ multiline = '''Línea #1
 Línea #2'''
 
 print(len(multiline))
+
+
+str1 = 'a'
+str2 = 'b'
+
+print(str1 + str2)
+print(str2 + str1)
+print(5 * 'a')
+print('b' * 4)
+
+
+
+# Demostración de la función ord().
+
+char_1 = 'a'
+char_2 = ' '  # space
+
+print(ord(char_1))
+print(ord(char_2))
