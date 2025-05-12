@@ -39,3 +39,9 @@ char_2 = ' '  # space
 
 print(ord(char_1))
 print(ord(char_2))
+
+
+# Demostración de la función chr().
+
+print(chr(97))
+print(chr(945))
