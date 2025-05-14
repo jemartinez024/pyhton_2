@@ -12,4 +12,9 @@ La cadena recién creada se devuelve como resultado."""
 
 El método join() se invoca desde una cadena que contiene una coma (la cadena puede ser larga o puede estar vacía).
 El argumento del join es una lista que contiene tres cadenas.
-El método devuelve una nueva cadena."""
+El método devuelve una nueva cadena.
+
+Aquí está:
+
+omicron,pi,rho
+"""
