@@ -10,14 +10,33 @@ digits = [ '1111110',  	# 0
 	   '1111011',	# 9
 	   ]
 
+"""Cada string representa cuáles segmentos están encendidos en el display de 7 segmentos.
+Los segmentos se numeran así:
 
-def print_number(num):
-	global digits
-	digs = str(num)
-	lines = [ '' for lin in range(5) ]
-	for d in digs:
-		segs = [ [' ',' ',' '] for lin in range(5) ]
-		ptrn = digits[ord(d) - ord('0')]
+Copiar
+Editar
+  0
+5   1
+  6
+4   2
+  3
+Entonces '1111110' (para el 0) significa:
+
+Segmentos 0, 1, 2, 3, 4, 5 están encendidos.
+
+Segmento 6 está apagado (la barra central).
+
+"""
+
+def print_number(num): #digits es la lista que ya definimos.
+	global digits #num es el número que el usuario quiere mostrar, por ejemplo 203.
+	digs = str(num) #Para poder recorrer cada dígito individualmente. Por ejemplo: '203' → ['2', '0', '3']
+	lines = [ '' for lin in range(5) ] #Creamos una lista con 5 líneas vacías. Aquí construiremos cada fila del display final.
+
+
+	for d in digs: #Recorrer cada dígito
+		segs = [ [' ',' ',' '] for lin in range(5) ] #Creamos una matriz 5x3 que representa el espacio del dígito, inicialmente con espacios ' '. Esta matriz se irá llenando con '#' en los lugares donde hay un segmento activo.
+		ptrn = digits[ord(d) - ord('0')] #ord(d) convierte el carácter '2' en su código ASCII: 50. ord('0') es 48.Entonces ord(d) - ord('0') nos da el índice correcto: 2 → digits[2] → '1101101'.
 		if ptrn[0] == '1':
 			segs[0][0] = segs[0][1] = segs[0][2] = '#'
 		if ptrn[1] == '1':
