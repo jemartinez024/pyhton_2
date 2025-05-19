@@ -5,7 +5,9 @@ text1 = input("Ingresa la pirmera palabra: ")
 text2 = input("Ingresa la segunda palabra: ")
 
 text1,text2 = text1,text2.replace(' ','')  ## Elimina los espacios en blanco que pueda tener
-#text1,text2 = text1,text2.upper() # Convierte a minúsculas.
+text1 = text1.upper() # Convierte a mayusculas.
+text2 = text2.upper() # Convierte a mayusculas.
+
 
 char_list1 = list(text1) # Convierte cadenas en listas
 char_list2 = list(text2)
@@ -13,14 +15,14 @@ char_list2 = list(text2)
 orden1 = sorted(char_list1) # Ordena las listas
 orden2 = sorted(char_list2)
 
-string_add = "".join(orden1 + orden2) # Une los elementos de cada lista en cadenas separadas
+string_add1 = "".join(orden1) # Une los elementos de cada lista en cadenas separadas
+string_add2 = "".join(orden2)
+#upper_letter =  string_add.upper()
 
-upper_letter =  string_add.upper()
 
+#print(string_add1 + string_add2)
 
-print(upper_letter)
-
-if orden1 == orden2:
+if string_add1 == string_add2:
     print('Son anagramas')
 else:
     print('No Son anagramas')
