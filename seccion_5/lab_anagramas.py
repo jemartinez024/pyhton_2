@@ -4,7 +4,9 @@ print("*** Bienvendo al comprobador de Anagramas ***")
 text1 = input("Ingresa la pirmera palabra: ")
 text2 = input("Ingresa la segunda palabra: ")
 
-text1,text2 = text1,text2.replace(' ','')  ## Elimina los espacios en blanco que pueda tener
+text1 = text1.replace(' ','')  ## Elimina los espacios en blanco que pueda tener
+text2 = text2.replace(' ','')  ## Elimina los espacios en blanco que pueda tener
+
 text1 = text1.upper() # Convierte a mayusculas.
 text2 = text2.upper() # Convierte a mayusculas.
 
@@ -17,7 +19,7 @@ orden2 = sorted(char_list2)
 
 string_add1 = "".join(orden1) # Une los elementos de cada lista en cadenas separadas
 string_add2 = "".join(orden2)
-#upper_letter =  string_add.upper()
+
 
 
 #print(string_add1 + string_add2)
