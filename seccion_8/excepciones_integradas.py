@@ -185,19 +185,17 @@ De hecho, las excepciones son objetos; sin embargo, no podemos decirle nada sobr
 Por el momento, si deseas obtener más información sobre las excepciones por tu cuenta, consulta la Biblioteca Estándar de Python en https://docs.python.org/3.6/library/exceptions.html.
 
 """
+"""
+# ¿Cómo abusar del diccionario
+# y cómo lidiar con ello?
 
-# Este código no puede ser abortado
-# presionando Ctrl-C.
+dictionary = {'a': 'b', 'b': 'c', 'c': 'd'}
+ch = 'a'
 
-from time import sleep
-
-seconds = 0
-
-while True:
-    try:
-        print(seconds)
-        seconds += 1
-        sleep(1)
-    except KeyboardInterrupt:
-        print("¡No hagas eso!")
-
+try:
+    while True:
+        ch = dictionary[ch]
+        print(ch)
+except KeyError:
+    print('No existe tal clave:', ch)
+"""
