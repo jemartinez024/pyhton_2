@@ -224,11 +224,18 @@ Si las excepciones y la validación de datos son como conducir con cuidado, la a
 
 Veamos a la instrucción assert en acción. Observa el código en el editor. Ejecútalo."""
 
-import math
+"""import math
 
 x = float(input("Ingresa un número: "))
 assert x >= 0.0
 
 x = math.sqrt(x)
 
-print(x)
+print(x)"""
+
+"""El programa se ejecuta sin problemas si se ingresa un valor numérico válido mayor o igual a cero; de lo contrario, se detiene y emite el siguiente mensaje:
+
+Traceback (most recent call last):
+File ".main.py", line 4, in <module>
+assert x >= 0.0
+AssertionError"""
