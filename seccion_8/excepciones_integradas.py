@@ -185,7 +185,7 @@ De hecho, las excepciones son objetos; sin embargo, no podemos decirle nada sobr
 Por el momento, si deseas obtener más información sobre las excepciones por tu cuenta, consulta la Biblioteca Estándar de Python en https://docs.python.org/3.6/library/exceptions.html.
 
 """
-"""
+
 # ¿Cómo abusar del diccionario
 # y cómo lidiar con ello?
 
@@ -198,4 +198,4 @@ try:
         print(ch)
 except KeyError:
     print('No existe tal clave:', ch)
-"""
+
