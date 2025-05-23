@@ -34,6 +34,8 @@ def read_int(prompt, min, max):
             return value
             
 value = read_int("Ingresa un número entre -10 a 10: ", -10, 10)
-
+5
 print("El número es:", value)
+
+
 
