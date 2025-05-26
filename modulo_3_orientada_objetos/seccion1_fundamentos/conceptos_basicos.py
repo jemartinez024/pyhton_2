@@ -187,3 +187,8 @@ El objeto recién creado está equipado con todo lo que trae la clase. Como esta
 El acto de crear un objeto de la clase seleccionada también se llama instanciación (ya que el objeto se convierte en una instancia de la clase).
 
 Dejemos las clases en paz por un breve momento, ya que ahora diremos algunas palabras sobre pilas. Sabemos que el concepto de clases y objetos puede no estar completamente claro todavía. No te preocupes, te explicaremos todo muy pronto."""
+
+
+class TheSimplestClass:
+    pass
+my_first_object = TheSimplestClass()
