@@ -63,3 +63,28 @@ La salida del programa muestra claramente que nuestras suposiciones son correcta
 {'third': 5, 'first': 4}
 Output
 Hay una conclusión adicional que debería mencionarse aquí: el modificar una variable de instancia de cualquier objeto no tiene impacto en todos los objetos restantes. Las variables de instancia están perfectamente aisladas unas de otras"""
+
+"""Observa el ejemplo modificado en el editor.
+
+"""
+
+class ExampleClass:
+    def __init__(self, val = 1):
+        self.__first = val
+
+    def set_second(self, val = 2):
+        self.__second = val
+
+
+example_object_1 = ExampleClass()
+example_object_2 = ExampleClass(2)
+
+example_object_2.set_second(3)
+
+example_object_3 = ExampleClass(4)
+example_object_3.__third = 5
+
+
+print(example_object_1.__dict__)
+print(example_object_2.__dict__)
+print(example_object_3.__dict__)
