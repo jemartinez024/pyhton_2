@@ -122,4 +122,12 @@ printBases(Sub)
 Output
 ( object )
 ( object  )
-( SuperOne SuperTwo )"""
+( SuperOne SuperTwo  Nota: una clase sin superclases explícitas apunta a object (una clase de Python predefinida) como su antecesor directo."""
+
+
+"""3.4.3 Reflexión e introspección
+Todo esto permite que el programador de Python realice dos actividades importantes específicas para muchos lenguajes objetivos. Las cuales son:
+
+Introspección, que es la capacidad de un programa para examinar el tipo o las propiedades de un objeto en tiempo de ejecución.
+Reflexión, que va un paso más allá, y es la capacidad de un programa para manipular los valores, propiedades y/o funciones de un objeto en tiempo de ejecución.
+En otras palabras, no tienes que conocer la definición completa de clase/objeto para manipular el objeto, ya que el objeto y/o su clase contienen los metadatos que te permiten reconocer sus características durante la ejecución del programa."""
