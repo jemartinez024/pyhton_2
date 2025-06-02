@@ -110,4 +110,6 @@ class Classy:
 obj_1 = Classy("objeto")
 
 print(obj_1.var)
-    
+
+
+
