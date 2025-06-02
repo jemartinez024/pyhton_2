@@ -64,4 +64,62 @@ __module__ es una cadena, también almacena el nombre del módulo que contiene l
 
 Vamos a comprobarlo: ejecuta el código en el editor."""
 
+class Classy:
+    pass
 
+
+print(Classy.__module__)
+obj = Classy()
+print(obj.__module__)
+
+
+"""La salida del código es:
+
+Output
+__main__
+__main__
+Como sabes, cualquier módulo llamado __main__ en realidad no es un módulo, sino es el archivo actualmente en ejecución.
+
+
+___bases__ es una tupla. La tupla contiene clases (no nombres de clases) que son superclases directas de la clase.
+
+El orden es el mismo que el utilizado dentro de la definición de clase.
+
+Te mostraremos solo un ejemplo muy básico, ya que queremos resaltar cómo funciona la herencia.
+
+Además, te mostraremos cómo usar este atributo cuando discutamos los aspectos orientados a objetos de las excepciones.
+
+Nota: solo las clases tienen este atributo, los objetos no.
+
+Hemos definido una función llamada printBases(), diseñada para presentar claramente el contenido de la tupla.
+
+Observa el código en el editor. Ejecútalo."""
+
+class SuperOne:
+    pass
+
+
+class SuperTwo:
+    pass
+
+
+class Sub(SuperOne, SuperTwo):
+    pass
+
+
+def printBases(cls):
+    print('( ', end='')
+
+    for x in cls.__bases__:
+        print(x.__name__, end=' ')
+    print(')')
+
+
+printBases(SuperOne)
+printBases(SuperTwo)
+printBases(Sub)
+"""La salida del código es:
+Output
+( object )
+( object  )
+( SuperOne SuperTwo )"""
