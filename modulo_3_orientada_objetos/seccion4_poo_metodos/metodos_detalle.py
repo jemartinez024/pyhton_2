@@ -111,5 +111,83 @@ obj_1 = Classy("objeto")
 
 print(obj_1.var)
 
+"""Ejecútalo. El código da como salida:
 
+Output
+objeto
+Toma en cuenta que el constructor:
+
+No puede retornar un valor, ya que está diseñado para devolver un objeto recién creado y nada más.
+No se puede invocar directamente desde el objeto o desde dentro de la clase (puedes invocar un constructor desde cualquiera de las superclases del objeto, pero discutiremos esto más adelante).
+
+Como __init__ es un método, y un método es una función, puedes hacer los mismos trucos con constructores y métodos que con las funciones ordinarias.
+
+El ejemplo en el editor muestra cómo definir un constructor con un valor de argumento predeterminado. Pruébalo."""
+
+class Classy:
+    def __init__(self, value = None):
+        self.var = value
+
+
+obj_1 = Classy("objeto")
+obj_2 = Classy()
+
+print(obj_1.var)
+print(obj_2.var)
+
+
+"""El código da como salida:
+
+Output
+objeto
+None
+Todo lo que hemos dicho sobre el manejo de los nombres también se aplica a los nombres de métodos, un método cuyo nombre comienza con __ está (parcialmente) oculto.
+
+El ejemplo muestra este efecto:
+
+
+class Classy:
+    def visible(self):
+        print("visible")
+ 
+    def __hidden(self):
+        print("oculto")
+ 
+ 
+obj = Classy()
+obj.visible()
+ 
+try:
+    obj.__hidden()
+except:
+    print("fallido")
+ 
+obj._Classy__hidden()
+ 
+El código da como salida:
+
+Output
+visible
+fallido
+oculto
+Ejecuta el programa y pruébalo."""
+
+
+class Classy:
+    def visible(self):
+        print("visible")
+
+    def __hidden(self):
+        print("oculto")
+
+
+obj = Classy()
+obj.visible()
+
+try:
+    obj.__hidden()
+except:
+    print("fallido")
+
+obj._Classy__hidden()
 
