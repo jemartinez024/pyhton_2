@@ -52,7 +52,7 @@ Te mostraremos como usar el poliformismo para extender la flexibilidad de la cla
 
 Mira el ejemplo en el editor."""
 
-import time
+"""import time
 
 class TrackedVehicle:
     def control_track(left, stop):
@@ -71,7 +71,7 @@ class WheeledVehicle:
     def turn(left):
         turn_front_wheels(left, True)
         time.sleep(0.25)
-        turn_front_wheels(left, False)
+        turn_front_wheels(left, False)"""
         
         
 """¿Se parece a algo? Sí, por supuesto que lo hace. Se refiere al ejemplo que se muestra al comienzo del módulo cuando hablamos de los conceptos generales de la programación orientada a objetos.
