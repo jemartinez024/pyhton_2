@@ -60,3 +60,22 @@ object = Bottom()
 object.m_bottom()
 object.m_middle()
 object.m_top()
+
+"""Nota: ambas clases Middle definen un método con el mismo nombre: m_middle().
+
+Introduce una pequeña incertidumbre en nuestra muestra, aunque estamos absolutamente seguros de que puedes responder la siguiente pregunta clave: ¿cuál de los dos métodos m_middle() se invocará realmente cuando la siguiente línea se ejecute?
+
+
+Object.m_middle()
+ 
+En otras palabras, qué verás en la pantalla: middle_left o middle_right?
+
+No es necesario que te apresures, ¡piénselo dos veces y toma en cuenta el MRO de Python!
+
+¿Estás listo?
+
+Sí, tienes razón. La invocación activará el método m_middle(), que proviene de la clase Middle_Left. La explicación es simple: la clase aparece antes de Middle_Right en la lista de herencia de la clase Bottom. Si deseas asegurarte de que no haya dudas al respecto, intenta intercambiar estas dos clases en la lista y verifica los resultados.
+
+Si deseas experimentar algunas impresiones más profundas sobre la herencia múltiple y las piedras preciosas, intenta modificar nuestro fragmento y equipar la clase Upper con otro espécimen del método m_middle() e investigua su comportamiento detenidamente.
+
+Como puedes ver, los diamantes pueden traer algunos problemas a tu vida, tanto los reales como los que ofrece Python."""
