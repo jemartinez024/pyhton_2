@@ -1,0 +1,4 @@
+"""3.5.8 ¿Qué es el Orden de Resolución de Métodos (MRO) y por qué no todas las herencias tienen sentido?
+MRO, en general, es una forma (puedes llamarlo una estrategia) en la que un lenguaje de programación en particular escanea la parte superior de la jerarquía de una clase para encontrar el método que necesita actualmente. Vale la pena enfatizar que los diferentes lenguajes usan MROs levemente (o incluso completamente) diferentes. Python es único en este aspecto y sus costumbres son un poco específicas.
+
+Te mostraremos cómo funciona el MRO de Python en dos casos peculiares que son ejemplos claros de problemas que pueden ocurrir cuando intentas usar la herencia múltiple de manera demasiado imprudente. Comencemos con un fragmento que inicialmente puede parecer simple. Mira lo que te hemos preparado en el editor."""
