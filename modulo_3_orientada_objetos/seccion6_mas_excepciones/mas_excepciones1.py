@@ -19,3 +19,40 @@ def reciprocal(n):
 
 print(reciprocal(2))
 print(reciprocal(0))
+
+
+"""Un código etiquetado de esta manera se ejecuta cuando (y solo cuando) no se ha generado ninguna excepción dentro de la parte del try:. Podemos decir que este bloque se ejecuta después del try:, ya sea el que comienza con except (no olvides que puede haber más de un bloque de este tipo) o la que comienza con else.
+
+Nota: el bloque else: debe ubicarse después del último bloque except.
+
+El código de ejemplo produce el siguiente resultado:
+
+Output
+Todo salió bien
+0.5
+División fallida
+None
+
+El try-except se puede extender de una manera más - agregando una parte encabezada por la palabra clave reservada finally (debe ser el último bloque del código diseñado para manejar excepciones).
+
+Nota: estas dos variantes (else y finally) no son dependientes entre si, y pueden coexistir u ocurrir de manera independiente.
+
+El bloque finally siempre se ejecuta (finaliza la ejecución del bloque try-except, de ahí su nombre), sin importar lo que sucedió antes, incluso cuando se genera una excepción, sin importar si esta se ha manejado o no.
+
+Observa el código en el editor."""
+
+def reciprocal(n):
+    try:
+        n = 1 / n
+    except ZeroDivisionError:
+        print("División fallida")
+        n = None
+    else:
+        print("Todo salió bien")
+    finally:
+        print("Es momento de decir adiós")
+        return n
+
+
+print(reciprocal(2))
+print(reciprocal(0))
