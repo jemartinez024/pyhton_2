@@ -23,3 +23,17 @@ Se imprimirá el mismo mensaje si no hay un bloque except en el código, y Pytho
 Todas las excepciones integradas de Python forman una jerarquía de clases. Si lo deseas, puedes extenderlo sin problema.
 
 Observa el código en el editor."""
+
+def print_exception_tree(thisclass, nest = 0):
+    if nest > 1:
+        print("   |" * (nest - 1), end="")
+    if nest > 0:
+        print("   +---", end="")
+
+    print(thisclass.__name__)
+
+    for subclass in thisclass.__subclasses__():
+        print_exception_tree(subclass, nest + 1)
+
+
+print_exception_tree(BaseException)
