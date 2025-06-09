@@ -1,17 +1,20 @@
-class Ex(Exception)
-    def __init__(self, msg):
-        Exception.__init__(self, msg + msg)
-        self.args = (msg,)
+class I:
+    def __init__(self):
+        self.s = 'abc'
+        self.i = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.i == len(self.s):
+            raise StopIteration
+        v = self.s[self.i]
+        self.i += 1
+        return v
 
 
-try:
-    raise Ex('ex')
-except Ex as e:
-    print(e)
-except Exception as e:
-    print(e)
-# Expected output:
-# exex
+for x in I():
+    print(x,end='')
 
-
-# out
+# output: abc
