@@ -1,22 +1,17 @@
-class A:
-    def a(self):
-        print('a')
+class Ex(Exception)
+    def __init__(self, msg):
+        Exception.__init__(self, msg + msg)
+        self.args = (msg,)
 
 
-class B:
-    def a(self):
-        print('b')
-
-
-class C(B,A):
-    def c(self):
-        self.a()
-
-
-o = C()
-o.c()
-
-
+try:
+    raise Ex('ex')
+except Ex as e:
+    print(e)
+except Exception as e:
+    print(e)
+# Expected output:
+# exex
 
 
 # out
