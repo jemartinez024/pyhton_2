@@ -12,6 +12,41 @@ La declaración de la función lambda no se parece a una declaración de funció
 lambda parameters: expression"""
 
 
+"""Tal cláusula devuelve el valor de la expresión al tomar en cuenta el valor del argumento lambda actual.
+
+Como de costumbre, un ejemplo será útil. Nuestro ejemplo usa tres funciones lambda, pero con nombres. Analízalo cuidadosamente:
+
+
+two = lambda: 2
+sqr = lambda x: x * x
+pwr = lambda x, y: x ** y
+ 
+for a in range(-2, 3):
+    print(sqr(a), end=" ")
+    print(pwr(a, two()))
+ 
+
+Vamos a analizarlo:
+
+La primer lambda es una función anónima sin parámetros que siempre devuelve un 2. Como se ha asignado a una variable llamada two, podemos decir que la función ya no es anónima, y se puede usar su nombre para invocarla.
+
+La segunda es una función anónima de un parámetro que devuelve el valor de su argumento al cuadrado. Se ha nombrado sqr.
+
+La tercer lambda toma dos parámetros y devuelve el valor del primero elevado al segundo. El nombre de la variable que lleva la lambda habla por si mismo. No se utiliza pow para evitar confusiones con la función incorporada del mismo nombre y el mismo propósito.
+
+El programa produce el siguiente resultado:
+
+Output
+4 4
+1 1
+0 0
+1 1
+4 4
+
+Este ejemplo es lo suficientemente claro como para mostrar como se declaran las funciones lambda y cómo se comportan, pero no dice nada acerca de por que son necesarias y para qué se usan, ya que se pueden reemplazar con funciones de Python de rutina.
+
+¿Dónde está el beneficio?"""
+
 two = lambda: 2
 sqr = lambda x: x * x
 pwr = lambda x, y: x ** y
@@ -20,3 +55,5 @@ for a in range(-2, 3):
     print(sqr(a), end=" ")
     print(pwr(a, two()))
 
+# El beneficio de las funciones lambda es que pueden ser utilizadas en contextos donde se requiere una función pequeña y rápida, sin necesidad de definir una función completa con un nombre. Esto es especialmente útil en funciones de orden superior como `map()`, `filter()`, y `sorted()`, donde se necesita una función simple para aplicar a cada elemento de una colección.
+# Por ejemplo, si quisiéramos usar `sqr` y `pwr` directamente en una función como `map`, podríamos hacerlo sin necesidad de definir una función completa:
