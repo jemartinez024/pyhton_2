@@ -88,3 +88,48 @@ for v in the_generator:
     print(v, end=" ")
 print()
 
+
+"""Son los paréntesis. Los corchetes hacen una comprensión, los paréntesis hacen un generador.
+
+El código, cuando se ejecuta, produce dos líneas idénticas:
+
+Output
+1 0 1 0 1 0 1 0 1 0
+1 0 1 0 1 0 1 0 1 0"""
+
+
+"""¿Cómo puedes saber que la segunda asignación crea un generador, no una lista?
+
+Hay algunas pruebas que podemos mostrarte. Aplica la función len() a ambas entidades.
+
+len(the_list) dará como resultado 10. Claro y predecible. len(the_generator) generará una excepción, y verás el siguiente mensaje:
+
+Output
+TypeError: object of type 'generator' has no len()
+
+Por supuesto, guardar la lista o el generador no es necesario; puedes crearlos exactamente en el lugar donde los necesites, justo como aquí:
+
+
+for v in [1 if x % 2 == 0 else 0 for x in range(10)]:
+    print(v, end=" ")
+print()
+ 
+for v in (1 if x % 2 == 0 else 0 for x in range(10)):
+    print(v, end=" ")
+print()
+ 
+
+Nota: la misma apariencia de la salida no significa que ambos bucles funcionen de la misma manera. En el primer bucle, la lista se crea (y se itera) como un todo; en realidad, existe cuando se ejecuta el bucle.
+
+En el segundo bucle, no hay ninguna lista, solo hay valores subsecuentes producidos por el generador, uno por uno.
+
+Realiza tus propios experimentos."""
+
+for v in [1 if x % 2 == 0 else 0 for x in range(10)]:
+    print(v, end=" ")
+print()
+
+for v in (1 if x % 2 == 0 else 0 for x in range(10)):
+    print(v, end=" ")
+print()
+
