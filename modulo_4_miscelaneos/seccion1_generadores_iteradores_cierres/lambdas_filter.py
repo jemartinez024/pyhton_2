@@ -16,3 +16,13 @@ filtered = list(filter(lambda x: x > 0 and x % 2 == 0, data))
 
 print(data)
 print(filtered)
+
+"""Nota: hemos hecho uso del módulo random para inicializar el generador de números aleatorios (que no debe confundirse con los generadores de los que acabamos de hablar) con la función seed(), para producir cinco valores enteros aleatorios de -10 a 10 usando la función randint().
+
+Luego se filtra la lista y solo se aceptan los números que son pares y mayores que cero.
+
+Por supuesto, no es probable que recibas los mismos resultados, pero así es como se veían nuestros resultados:
+
+Output
+[6, 3, 3, 2, -7]
+[6, 2]"""
