@@ -61,3 +61,26 @@ except Exception as exc:
         print("Demasiados archivos abiertos.")
     else:
         print("El numero del error es:", exc.errno)
+        
+        
+"""Afortunadamente, existe una función que puede simplificar el código de manejo de errores.
+
+Su nombre es strerror(), y proviene del módulo os y espera solo un argumento: un número de error.
+
+Su función es simple: proporciona un número de error y una cadena que describe el significado del error.
+
+Nota: si pasas un código de error inexistente (un número que no está vinculado a ningún error real), la función generará una excepción ValueError.
+
+Ahora podemos simplificar nuestro código de la siguiente manera:"""
+
+
+from os import strerror
+
+try:
+    s = open("c:/users/user/Desktop/file.txt", "rt")
+    # El procesamiento va aquí.
+    s.close()
+except Exception as exc:
+    print("El archivo no pudo ser abierto:", strerror(exc.errno))
+    
+"""Bueno. Ahora es el momento de tratar con archivos de texto y familiarizarse con algunas técnicas básicas que puedes utilizar para procesarlos."""
