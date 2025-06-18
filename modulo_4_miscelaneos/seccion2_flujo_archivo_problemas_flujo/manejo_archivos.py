@@ -37,4 +37,14 @@ Ahora viene un problema pequeño. En los sistemas Unix/Linux, los extremos de la
 
 Otros sistemas operativos, especialmente los derivados del sistema prehistórico CP/M (que también aplica a los sistemas de la familia Windows) utilizan una convención diferente: el final de la línea está marcada por un par de caracteres, CR y LF (códigos ASCII 13 y 10) los cuales se puede codificar como \r\n.
 
+Esta ambigüedad puede causar varias consecuencias desagradables.
+
+Si creas un programa responsable de procesar un archivo de texto y está escrito para Windows, puedes reconocer los extremos de las líneas al encontrar los caracteres \r\n, pero si el mismo programa se ejecuta en un entorno Unix/Linux será completamente inútil, y viceversa: el programa escrito para sistemas Unix/Linux podría ser inútil en Windows.
+
+Estas características indeseables del programa, que impiden o dificultan el uso del programa en diferentes entornos, se denomina falta de portabilidad.
+
+Del mismo modo, el rasgo del programa que permite la ejecución en diferentes entornos se llama portabilidad. Un programa dotado de tal rasgo se llama programa portable.
+
+Dado que los problemas de portabilidad eran (y siguen siendo) muy graves, se tomó la decisión de resolver definitivamente el problema de una manera que no atraiga mucho la atención del desarrollador.
+
 """
