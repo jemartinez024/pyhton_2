@@ -47,4 +47,15 @@ Del mismo modo, el rasgo del programa que permite la ejecución en diferentes en
 
 Dado que los problemas de portabilidad eran (y siguen siendo) muy graves, se tomó la decisión de resolver definitivamente el problema de una manera que no atraiga mucho la atención del desarrollador.
 
+Se realizó a nivel de clases, que son responsables de leer y escribir caracteres hacia y desde el stream. Funciona de la siguiente manera:
+
+Cuando el stream está abierto y se recomienda que los datos en el archivo asociado se procesen como texto (o no existe tal aviso), se cambia al modo texto.
+
+Durante la lectura y escritura de líneas desde y hacia el archivo asociado, no ocurre nada especial en el entorno Unix, pero cuando se realizan las mismas operaciones en el entorno Windows, un proceso llamado traducción de caracteres de nueva línea ocurre: cuando lees una línea del archivo, cada par de caracteres \r\n se reemplaza con un solo carácter \n, y viceversa; durante las operaciones de escritura, cada carácter \n se reemplaza con un par de caracteres \r\n.
+
+El mecanismo es completamente transparente para el programa, el cual puede escribirse como si estuviera destinado a procesar archivos de texto Unix/Linux solamente; el código fuente ejecutado en un entorno Windows también funcionará correctamente.
+
+Cuando el stream está abierto, su contenido se toma tal cual es, sin ninguna conversión, no se agregan ni se omiten bytes.
+
+
 """
