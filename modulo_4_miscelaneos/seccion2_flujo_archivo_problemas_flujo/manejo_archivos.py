@@ -12,3 +12,29 @@ Un objeto de una clase adecuada es creado cuando abres el archivo y lo aniquilas
 Entre estos dos eventos, puedes usar el objeto para especificar que operaciones se deben realizar en un stream en particular. Las operaciones que puedes usar están impuestas por la forma en que abriste el archivo.
 
 En general, el objeto proviene de una de las clases que se muestran aquí:"""
+
+"""Nota: nunca se utiliza el constructor para dar vida a estos objetos. La unica forma de obtenerlos es invocar la función llamada open().
+
+La función analiza los argumentos proporcionados y crea automáticamente el objeto requerido.
+
+Si deseas deshacerte del objeto, invoca el método denominado close().
+
+La invocación cortará la conexión con el objeto y el archivo, y eliminará el objeto.
+
+Para nuestros propósitos, solo nos ocuparemos de los streams representados por los objetos BufferIOBase y TextIOBase. Entenderás por que pronto.
+
+Debido al tipo de contenido de los flujos o streams, se dividen en tipo texto y binario.
+
+Los streams de texto están estructurados en líneas; es decir, contienen caracteres tipográficos (letras, dígitos, signos de puntuación, etc). dispuestos en filas (líneas), como se ve a simple vista cuando se mira el contenido del archivo en el editor.
+
+Este tipo de archivo es escrito (o leído) principalmente carácter por carácter, o línea por línea.
+
+Los streams binarios no contienen texto, sino una secuencia de bytes de cualquier valor. Esta secuencia puede ser, por ejemplo, un programa ejecutable, una imagen, un audio o un videoclip, un archivo de base de datos, etc.
+
+Debido a que estos archivos no contienen líneas, las lecturas y escrituras se relacionan con porciones de datos de cualquier tamaño. Por lo tanto, los datos se leen y escriben byte a byte, o bloque a bloque, donde el tamaño del bloque generalmente varía de uno a un valor elegido arbitrariamente.
+
+Ahora viene un problema pequeño. En los sistemas Unix/Linux, los extremos de la línea están marcados por un solo carácter llamado LF (código ASCII 10) designado en los programas de Python como \n.
+
+Otros sistemas operativos, especialmente los derivados del sistema prehistórico CP/M (que también aplica a los sistemas de la familia Windows) utilizan una convención diferente: el final de la línea está marcada por un par de caracteres, CR y LF (códigos ASCII 13 y 10) los cuales se puede codificar como \r\n.
+
+"""
