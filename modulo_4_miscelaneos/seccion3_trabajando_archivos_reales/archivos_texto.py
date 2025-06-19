@@ -18,3 +18,52 @@ try:
 	file.close()
 except IOError as e:
 	print("Se produjo un error de E/S: ", strerror(e.errno))
+#print('newtext.txt', "ha sido creado con éxito.")
+ 
+ 
+"""La cadena que se grabará consta de la palabra línea, seguida del número de línea. Hemos decidido escribir el contenido de la cadena carácter por carácter (esto lo hace el bucle interno for) pero no estás obligado a hacerlo de esta manera.
+
+Solo queríamos mostrarte que write() puede operar con caracteres individuales.
+
+El código crea un archivo con el siguiente texto:
+
+Output
+línea #1
+línea #2
+línea #3
+línea #4
+línea #5
+línea #6
+línea #7
+línea #8
+línea #9
+línea #10
+¿Puedes imprimir el contenido del archivo en la consola?
+
+Te alentamos a que pruebes el comportamiento del método write() localmente en tu máquina.
+
+Mira el ejemplo en el editor. Hemos modificado el código anterior para escribir líneas enteras en el archivo de texto."""
+
+
+from os import strerror
+
+try:
+    file = open('newtext.txt', 'wt')
+    for i in range(10):
+        file.write("línea #" + str(i+1) + "\n")
+    file.close()
+except IOError as e:
+    print("Se produjo un error de E/S: ", strerror(e.errno))
+    
+"""El contenido del archivo recién creado es el mismo.
+
+Nota: puedes usar el mismo método para escribir en el stream stderr, pero no intentes abrirlo, ya que siempre está abierto implícitamente.
+
+New Component Title
+Por ejemplo, si deseas enviar un mensaje de tipo cadena a stderr para distinguirlo de la salida normal del programa, puede verse así:
+
+
+import sys
+sys.stderr.write("Mensaje de Error")
+ 
+"""
