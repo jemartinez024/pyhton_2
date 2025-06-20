@@ -20,3 +20,36 @@ try:
         print(hex(b), end=' ')
 except IOError as e:
     print("Se produjo un error de E/S:", strerror(e.errno))
+    
+    
+"""Analicémoslo:
+
+Primero, abrimos el archivo (el que se creó usando el código anterior) con el modo descrito como rb.
+Luego, leemos su contenido en el arreglo de bytes llamado data, con un tamaño de diez bytes.
+Finalmente, imprimimos el contenido del arreglo de bytes: ¿Son los mismos que esperabas?
+Ejecuta el código y verifica si funciona.
+
+Se ofrece una forma alternativa de leer el contenido de un archivo binario mediante el método denominado read().
+
+Invocado sin argumentos, intenta leer todo el contenido del archivo en la memoria, haciéndolo parte de un objeto recién creado de la clase bytes.
+
+Esta clase tiene algunas similitudes con bytearray, con la excepción de una diferencia significativa: es immutable.
+
+Afortunadamente, no hay obstáculos para crear un arreglo de bytes tomando su valor inicial directamente del objeto de bytes, como aquí:"""
+
+
+from os import strerror
+
+try:
+    binary_file = open('file.bin', 'rb')
+    data = bytearray(binary_file.read())
+    binary_file.close()
+
+    for b in data:
+        print(hex(b), end=' ')
+
+except IOError as e:
+    print("Se produjo un error de E/S:", strerror(e.errno))
+
+"""Analicémoslo:
+Primero, abrimos el archivo (el que se creó usando el código anterior) con el modo descrito como rb. Nota: los primeros cinco bytes del archivo han sido leídos por el código; los siguientes cinco todavía están esperando ser procesados."""
