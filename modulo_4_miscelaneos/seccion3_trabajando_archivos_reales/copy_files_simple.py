@@ -38,4 +38,16 @@ except IOError as e:
 print(total,'byte(s) escritos con éxito')
 src.close()
 dst.close()
-    
+
+"""Analicémoslo:
+
+Las líneas 3 a la 8: solicitan al usuario el nombre del archivo a copiar e intentan abrirlo para leerlo; se termina la ejecución del programa si falla la apertura; nota: emplea la función exit() para detener la ejecución del programa y pasar el código de finalización al sistema operativo; cualquier código de finalización que no sea 0 significa que el programa ha encontrado algunos problemas; se debe utilizar el valor errno para especificar la naturaleza del problema.
+Las líneas 10 a la 16: repiten casi la misma acción, pero esta vez para el archivo de salida.
+La línea 18: prepara una parte de memoria para transferir datos del archivo fuente al destino; tal área de transferencia a menudo se llama un búfer, de ahí el nombre de la variable; el tamaño del búfer es arbitrario; en este caso, decidimos usar 64 kilobytes; técnicamente, un búfer más grande es más rápido al copiar elementos, ya que un búfer más grande significa menos operaciones de E/S; en realidad, siempre hay un límite, cuyo cruce no genera más ventajas; pruébalo tú mismo si quieres.
+Línea 19: cuenta los bytes copiados: este es el contador y su valor inicial.
+Línea 21: intenta llenar el búfer por primera vez.
+Línea 22: mientras se obtenga un número de bytes distinto a cero, repite las mismas acciones.
+Línea 23: escribe el contenido del búfer en el archivo de salida (nota: hemos usado un segmento para limitar la cantidad de bytes que se escriben, ya que write() siempre prefiere escribir todo el búfer).
+Línea 24: actualiza el contador.
+Línea 25: lee el siguiente fragmento de archivo.
+Las líneas 30 a la 32: limpieza final, el trabajo está hecho."""
