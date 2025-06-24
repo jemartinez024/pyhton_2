@@ -15,7 +15,7 @@ for char in content:
         else:
             letters_count[char] = 1
 
-letters_order = sorted(letters_count.items(), key=lambda x: x[1], reverse=True)
+letters_order = sorted(letters_count.keys())
 
 for letter in letters_order:
     print(f"{letter} -> {letters_count[letter]}")  
