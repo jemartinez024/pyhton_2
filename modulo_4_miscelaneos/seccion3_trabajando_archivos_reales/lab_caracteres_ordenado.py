@@ -28,19 +28,24 @@ except FileNotFoundError:
     print("El archivo no existe.")
 
 letters_count = {}
-for char in content:
+text = "aBc aa b" 
+for char in text:
     if char.isalpha():
-        char = char.lower()
-        if char in letters_count:
-            letters_count[char] += 1
-        else:
-            letters_count[char] = 1
+        letter = char.lower()
+        letters_count[letter] = letters_count.get(letter, 0) +1
 
-letters_order = sorted(letters_count.items(), key=lambda item: -item[1])
+print(letters_count)
+
+            
+            
+            
+            
+
+"""letters_order = sorted(letters_count.items(), key=lambda item: -item[1])
 
 with open(samplefile, 'w') as end_file:
     for letter, count in letters_order:
         end_file.write(f"{letter} -> {count}\n")
 
 for letter in letters_order:
-    print(f"{letter} -> {letters_count[letter]}")  
+    print(f"{letter} -> {letters_count[letter]}")  """
