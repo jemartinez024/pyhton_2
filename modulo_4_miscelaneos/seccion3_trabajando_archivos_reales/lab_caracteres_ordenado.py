@@ -36,7 +36,11 @@ for char in content:
         else:
             letters_count[char] = 1
 
-letters_order = sorted(letters_count.keys())
+letters_order = sorted(letters_count.items(), key=lambda item: -item[1])
+
+with open(samplefile, 'w') as end_file:
+    for letter, count in letters_order:
+        end_file.write(f"{letter} -> {count}\n")
 
 for letter in letters_order:
     print(f"{letter} -> {letters_count[letter]}")  
