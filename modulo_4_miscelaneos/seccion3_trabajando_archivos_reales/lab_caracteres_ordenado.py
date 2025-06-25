@@ -34,11 +34,15 @@ for char in text:
         letter = char.lower()
         letters_count[letter] = letters_count.get(letter, 0) +1
 
-print(letters_count)
+letters_order = sorted(letters_count.items(), key=lambda item: -item[1])
 
+print(letters_order)
+
+samplefile_hist = samplefile + ".hist"           
             
-            
-            
+with open(samplefile_hist, 'w') as end_file:
+    for letter, count in letters_order:
+        end_file.write(f"{letter} -> {count}\n")         
             
 
 """letters_order = sorted(letters_count.items(), key=lambda item: -item[1])
