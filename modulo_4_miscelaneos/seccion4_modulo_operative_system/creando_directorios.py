@@ -8,3 +8,9 @@ my_first_directory - esta es una ruta relativa que creará el directorio my_firs
 Observa el código en el editor. Muestra un ejemplo de cómo crear el directorio my_first_directory usando una ruta relativa. Esta es la variante más simple de la ruta relativa, que consiste en pasar solo el nombre del directorio.
 
 Si pruebas tu código aquí, generará el directorio recién creado ['my_first_directory'](y todo el contenido del catálogo de trabajo actual)."""
+
+import os
+
+os.mkdir("my_first_directory")
+print(os.listdir())
+    
