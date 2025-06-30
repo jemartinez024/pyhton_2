@@ -13,4 +13,14 @@ class Student:
 
 student = Student()
 student.take_nap(10)
-    
+
+
+"""Resultado:
+
+Estoy muy cansado. Tengo que tomar una siesta. Hasta luego.
+¡Dormí bien! ¡Me siento genial!
+La parte más importante del código de muestra es el uso de la función sleep (sí, puedes recordarla de una de las prácticas de laboratorio anteriores en el curso), que suspende la ejecución del programa por el determinado número de segundos.
+
+En nuestro ejemplo, son 5 segundos. Tienes razón, es una siesta muy corta.
+
+Extiende el sueño del estudiante cambiando la cantidad de segundos. Toma en cuenta que la función sleep acepta solo un número entero o de punto flotante."""
