@@ -12,3 +12,7 @@ from datetime import date
 d = date(2025, 6, 29)
 print(d.isoweekday())
 
+"""Resultado:
+
+1
+Como puedes ver, para la misma fecha obtenemos un número entero diferente, pero expresando el mismo día de la semana. El entero devuelto por el método isodayweek sigue la especificación ISO 85601."""
