@@ -14,4 +14,10 @@ Seguimiento de cambios en la base de datos - a veces es necesario almacenar info
 
 Validación de datos - pronto aprenderás a leer la fecha y hora actuales en Python. Conociendo la fecha y hora actuales, podrás validar varios tipos de datos, por ejemplo, si un cupón de descuento ingresado por un usuario en nuestra aplicación sigue siendo válido.
 
-Almacenamiento de información importante - ¿te imaginas las transferencias bancarias sin almacenar la información de cuándo se realizaron? La fecha y la hora de ciertas acciones deben conservarse y debemos ocuparnos de ello."""
+Almacenamiento de información importante - ¿te imaginas las transferencias bancarias sin almacenar la información de cuándo se realizaron? La fecha y la hora de ciertas acciones deben conservarse y debemos ocuparnos de ello.
+
+La fecha y la hora se utilizan en casi todas las áreas de nuestras vidas, por lo que es importante familiarizarse con el módulo datetime de Python. ¿Estás listo para una nueva dosis de conocimiento?
+
+
+
+"""
