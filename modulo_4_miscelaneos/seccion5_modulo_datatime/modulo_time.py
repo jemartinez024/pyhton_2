@@ -12,5 +12,5 @@ class Student:
         print("¡Dormí bien! ¡Me siento genial!")
 
 student = Student()
-student.take_nap(5)
+student.take_nap(10)
     
