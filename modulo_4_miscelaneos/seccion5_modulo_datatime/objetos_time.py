@@ -28,3 +28,16 @@ print("Hora:", t.hour)
 print("Minutos:", t.minute)
 print("Segundos:", t.second)
 print("Microsegundo:", t.microsecond)
+
+
+"""Resultado:
+
+Output
+Tiempo: 14:53:20.000001
+Hora: 14
+Minutos: 53
+Segundos: 20
+Microsegundos: 1
+En el ejemplo, pasamos cuatro parámetros al constructor de la clase: hour, minute, second, and microsecond. Se puede acceder a cada uno de ellos utilizando los atributos de clase.
+
+Nota: Pronto te diremos cómo puedes cambiar el formato de hora predeterminado."""
