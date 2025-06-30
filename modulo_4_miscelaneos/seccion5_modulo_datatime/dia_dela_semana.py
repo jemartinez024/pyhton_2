@@ -5,3 +5,10 @@ from datetime import date
 
 d = date(2025, 6, 29)
 print(d.weekday())
+
+
+from datetime import date
+
+d = date(2025, 6, 29)
+print(d.isoweekday())
+
