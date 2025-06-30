@@ -17,4 +17,9 @@ print("Marca de tiempo:", timestamp)
 
 d = date.fromtimestamp(timestamp)
 print("Fecha:", d)
-    
+
+"""Ejecuta el código para ver el resultado.
+
+Si ejecutas el código de muestra varias veces, podrás ver cómo se incrementa la marca de tiempo. Vale la pena agregar que el resultado de la función time depende de la plataforma, porque en los sistemas Unix y Windows, los segundos intercalares no se cuentan.
+
+Nota: en esta parte del curso también hablaremos sobre el módulo time."""
