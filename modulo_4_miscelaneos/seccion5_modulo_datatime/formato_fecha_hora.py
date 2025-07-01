@@ -24,3 +24,26 @@ Puedes poner cualquier carácter en el formato, pero solo las directivas reconoc
 Nota: Puedes encontrar todas las directivas disponibles: aquí.
 
 El formato de hora funciona de la misma forma que el formato de fecha, pero requiere el uso de directivas adecuadas. Echemos un vistazo más de cerca a algunos de ellos en el editor."""
+
+
+from datetime import time
+from datetime import datetime
+
+t = time(14, 53)
+print(t.strftime("%H:%M:%S"))
+
+dt = datetime(2020, 11, 4, 14, 53)
+print(dt.strftime("%y/%B/%d %H:%M:%S"))
+
+
+"""Resultado:
+
+Output
+14:53:00
+20/November/04 14:53:00
+El primero de los formatos utilizados se refiere únicamente al tiempo. Como puede adivinar, %H devuelve la hora como un número decimal con ceros, %M devuelve los minutos como un número decimal con ceros, mientras que % S devuelve el segundo como un número decimal con ceros. En nuestro ejemplo, %H se reemplaza por 14, %M por 53 y %S por 00.
+
+El segundo formato utilizado combina directivas de fecha y hora. Hay dos directivas nuevas, %Y y %B. La directiva %Y devuelve el año sin un siglo como un número decimal con ceros (en nuestro ejemplo es 20). La directiva %B devuelve el mes como el nombre completo de la configuración regional (en nuestro ejemplo, es noviembre).
+
+En general, tienes mucha libertad para crear formatos, pero debes recordar usar las directivas correctamente. Como Pregunta , puedes comprobar qué sucede si, por ejemplo, intentas utilizar la directiva %Y en el formato pasado al método strftime del objeto time. Intenta averiguar por qué se obtuvo este resultado. ¡Buena suerte!"""
+    
