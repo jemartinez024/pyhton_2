@@ -10,3 +10,12 @@ st = time.gmtime(timestamp)
 
 print(time.strftime("%Y/%m/%d %H:%M:%S", st))
 print(time.strftime("%Y/%m/%d %H:%M:%S"))
+
+"""Nuestro resultado es el siguiente:
+
+Output
+2019/11/04 14:53:00
+2020/10/12 12:19:40
+La creación de un formato tiene el mismo aspecto que para los métodos strftime en el módulo datetime. En nuestro ejemplo, usamos %Y, %m, %d, %H, %M y %S directivas que ya conoces.
+
+En la primera llamada a la función, formateamos el objeto struct_time, mientras que en la segunda llamada (sin el argumento opcional), formateamos la hora local. Puede encontrar todas las directivas disponibles en el módulo time aquí."""
