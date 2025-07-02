@@ -15,3 +15,13 @@ dt1 = datetime(2020, 11, 4, 0, 0, 0)
 dt2 = datetime(2019, 11, 4, 14, 53, 0)
 
 print(dt1 - dt2)
+
+
+"""Resultado:
+
+Output
+366 days, 0:00:00
+365 days, 9:07:00
+El ejemplo muestra la resta para los objetos date y datetime. En el primer caso, recibimos la diferencia en días, que es de 366 días. Toma en cuenta que también se muestra la diferencia en horas, minutos y segundos. En el segundo caso, recibimos un resultado diferente, porque especificamos el tiempo que se incluyó en los cálculos. Como resultado, recibimos 365 días, 9 horas y 7 minutos.
+
+En un momento aprenderás más sobre la creación de los objetos timedelta y sobre las operaciones que puedes realizar con ellos."""
