@@ -57,3 +57,19 @@ dt = datetime(2019, 10, 4, 14, 53) + delta2
 print(dt)
     
 
+"""Resultado:
+
+Output
+16 days, 2:00:00
+32 days, 4:00:00
+2019-11-05
+2019-11-05 18:53:00
+El objeto timedelta se puede multiplicar por un número entero. En nuestro ejemplo, multiplicamos el objeto que representa 16 días y 2 horas por 2. Como resultado, recibimos un objeto timedelta que representa 32 días y 4 horas.
+
+Toma en cuenta que tanto los días como las horas se han multiplicado por 2. Otra operación interesante usando el objeto timedelta es la suma. En el ejemplo, hemos sumado el objeto timedelta a los objetos date y datetime.
+
+Como resultado de estas operaciones, recibimos objetos date y datetime incrementados en días y horas almacenados en el objeto timedelta.
+
+La operación de multiplicación presentada te permite aumentar rápidamente el valor del objeto timedelta, mientras que la multiplicación también puede ayudar a obtener una fecha en el futuro.
+
+Por supuesto, las clases timedelta, date y datetime admiten muchas más operaciones. Te recomendamos que te familiarices con ellos en la documentación."""
