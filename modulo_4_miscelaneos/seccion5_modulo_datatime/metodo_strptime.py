@@ -23,3 +23,8 @@ Su resultado será el siguiente:
 
 Output
 time.struct_time(tm_year=2019, tm_mon=11, tm_mday=4, tm_hour=14, tm_min=53, tm_sec=0, tm_wday=0, tm_yday=308, tm_isds"""
+
+import time
+print(time.strptime("2019/11/04 14:53:00", "%Y/%m/%d %H:%M:%S"))
+
+"""En el ejemplo, hemos pasado la misma cadena y formato que en el ejemplo anterior. El resultado es un objeto struct_time que almacena los valores de fecha y hora en los atributos tm_year, tm_mon, tm_mday, tm_hour, tm_min, tm_sec, tm_wday, tm_yday y tm_isdst."""
