@@ -16,6 +16,9 @@ Día del año: 309
 Número de semana en el año: 44
 Nota: Cada línea de resultado debe crearse llamando al método strftime con al menos una directiva en el argumento de formato."""
 
+
+#Mi codigo:
+    
 import time
 from datetime import time
 from datetime import date
@@ -41,3 +44,17 @@ delta = timedelta(weeks=43, days=8)
 print("Día del año: ", delta)
 
 
+#Su codigo:
+
+from datetime import datetime
+
+my_date = datetime(2020, 11, 4, 14, 53)
+
+print(my_date.strftime("%Y/%m/%d %H:%M:%S"))
+print(my_date.strftime("%y/%B/%d %H:%M:%S %p"))
+print(my_date.strftime("%a, %Y %b %d"))
+print(my_date.strftime("%A, %Y %B %d"))
+print(my_date.strftime("Día de la semana: %w"))
+print(my_date.strftime("Día del año: %j"))
+print(my_date.strftime("Número de semana en el año: %W"))
+    
