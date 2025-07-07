@@ -12,4 +12,6 @@ Uno de ellos es, por supuesto, mostrar el calendario. Es importante que los día
 | Viernes          | 4            | `calendar.FRIDAY`    |
 | Sábado           | 5            | `calendar.SATURDAY`  |
 | Domingo          | 6            | `calendar.SUNDAY`    |
+
+La tabla de arriba muestra la representación de los días de la semana en el módulo calendar. El primer día de la semana (lunes) está representado por el valor 0 y la constante calendar.MONDAY, mientras que el último día de la semana (domingo) está representado por el valor 6 y la constante calendar.SUNDAY.
 """
