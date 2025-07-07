@@ -7,3 +7,7 @@ import calendar
 
 calendar.setfirstweekday(calendar.SUNDAY)
 calendar.prmonth(2020, 12)
+
+"""El ejemplo usa la constante calendar.SUNDAY, que contiene un valor de 6. Por supuesto, puedes pasar este valor directamente a la función setfirstweekday, pero la versión con una constante es más elegante.
+
+Como resultado, obtenemos un calendario que muestra el mes de diciembre de 2020, en el que el primer día de todas las semanas es el domingo."""
