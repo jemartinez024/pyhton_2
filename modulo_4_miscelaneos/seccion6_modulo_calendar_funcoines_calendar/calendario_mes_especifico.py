@@ -9,3 +9,7 @@ print(calendar.month(2020, 11))
 w: ancho de la columna de fecha (por defecto 2).
 l : número de líneas por semana (por defecto 1).
 Nota: También puedes utilizar la función prmonth, que tiene los mismos parámetros que la función month, pero no requiere el uso de la función print para mostrar el calendario."""
+
+import calendar
+calendar.prmonth(2020, 11)
+
