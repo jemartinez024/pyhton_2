@@ -24,3 +24,18 @@ Salida esperada
 
 Output
 53"""
+import calendar
+
+class MyCalendar(calendar.Calendar):
+    def count_weekday_in_year(self, year, weekday):
+        if weekday < 0 or weekday > 6:
+            raise ValueError("weekday must be between 0 and 6")
+        
+        count = 0
+        for month in range(1, 13):
+            month_days = self.monthdays2calendar(year, month)
+            for week in month_days:
+                for day, day_weekday in week:
+                    if day != 0 and day_weekday == weekday:
+                        count += 1
+        return count
