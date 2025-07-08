@@ -39,4 +39,8 @@ class MyCalendar(calendar.Calendar):
                     if day != 0 and day_weekday == weekday:
                         count += 1
         return count
-    print(count_weekday_in_year(2019, 0))
+
+my_calendar = MyCalendar()
+number_of_days = my_calendar.count_weekday_in_year(2000, calendar.SUNDAY)
+
+print(number_of_days)
