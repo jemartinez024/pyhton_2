@@ -103,6 +103,8 @@ print(issubclass(A, C))
 a = A(0)
 print(a.__a"""
 
+
+
 class A:
     def __init__(self):
         pass
@@ -110,4 +112,3 @@ class A:
 
 a = A(1)
 print(hasattr(a, 'A'))
-
