@@ -7,6 +7,38 @@ from mod import I
 
 """
 
-import math
-print(dir(math))
+"""import math
+print(dir(math))"""
+
+"""# archivo a.py
+print("a", end='')
+
+# archivo b.py
+import a
+print("b", end='')
+
+# archivo c.py
+print("c", end='')
+import a
+import b
+
+"""
+
+"""try:
+    raise Exception
+except:
+    print("c")
+except BaseException:
+    print("a")
+except Exception:
+    print("b")
+"""
+
+#for line in open('text.txt', 'rt'):
+var = 1
+assert var != 0
+print(var)
+
+x = "\\\\"
+print(len(x))
 
