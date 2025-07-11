@@ -35,10 +35,14 @@ except Exception:
 """
 
 #for line in open('text.txt', 'rt'):
-var = 1
+"""var = 
 assert var != 0
 print(var)
 
-x = "\\\\"
+x = "\\\"
 print(len(x))
+"""
+print(chr(ord('p') + 2))
+
+print(float("1.3"))
 
