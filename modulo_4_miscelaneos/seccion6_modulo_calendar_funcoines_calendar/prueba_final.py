@@ -46,3 +46,26 @@ print(chr(ord('p') + 2))
 
 print(float("1.3"))
 
+class Class:
+    def __init__(self, val=0):
+        pass
+
+object = Class()
+
+
+
+
+class A:
+    def __init__(self, v=2):
+        self.v = v
+
+    def set(self, v=1):
+        self.v += v
+        return self.v
+
+
+a = A()
+b = a
+b.set()
+print(a.v)
+
