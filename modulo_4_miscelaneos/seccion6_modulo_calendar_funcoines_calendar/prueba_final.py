@@ -105,10 +105,86 @@ print(a.__a"""
 
 
 
-class A:
+"""class A:
     def __init__(self):
         pass
 
 
 a = A(1)
 print(hasattr(a, 'A'))
+"""
+
+
+class A:
+    def a(self):
+        print('a')
+
+
+class B:
+    def a(self):
+        print('b')
+
+
+class C(B, A):
+    def c(self):
+        self.a()
+
+
+o = C()
+o.c()
+
+try:
+    raise Exception(1, 2, 3)
+except Exception as e:
+     print(len(e.args))
+
+def my_fun(n):
+    s = '+'
+    for i in range(n):
+        s += s
+        yield s
+
+
+for x in my_fun(2):
+    print(x, end='')
+
+
+
+class I:
+    def __init__(self):
+        self.s = 'abc'
+        self.i = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.i == len(self.s):
+            raise StopIteration
+        v = self.s[self.i]
+        self.i += 1
+        return v
+
+
+for x in I():
+    print(x, end='')
+
+def o(p):
+    def q():
+        return '*' * p
+    return q
+
+
+r = o(1)
+s = o(2)
+print(r() + s())
+
+numbers = [0, 2, 7, 9, 10]
+foo = map(lambda num: num **2, numbers)
+# Inserta la línea de código aquí.
+print(list(foo))
+
+numbers = [i*i for i in range(5)]
+foo = list(filter(lambda x: x % 2, numbers)) # Inserta la línea de código aquí.
+print(foo)
+
