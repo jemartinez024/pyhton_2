@@ -69,3 +69,45 @@ b = a
 b.set()
 print(a.v)
 
+
+
+class A:
+    A = 1
+    def __init__(self):
+        self.a = 0
+
+
+print(hasattr(A, 'a'))
+
+class A:
+    pass
+
+
+class B(A):
+    pass
+
+
+class C(B):
+    pass
+
+
+print(issubclass(A, C))
+
+
+
+"""class A:
+    def __init__(self, v):
+        self.__a = v + 1
+
+
+a = A(0)
+print(a.__a"""
+
+class A:
+    def __init__(self):
+        pass
+
+
+a = A(1)
+print(hasattr(a, 'A'))
+
