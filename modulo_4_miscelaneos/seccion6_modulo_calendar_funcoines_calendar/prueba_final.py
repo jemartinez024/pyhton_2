@@ -1,4 +1,4 @@
-"""identify
+"""""identify
 
 from mod import fun
 
@@ -42,7 +42,7 @@ print(var)
 x = "\\\"
 print(len(x))
 """
-print(chr(ord('p') + 2))
+"""print(chr(ord('p') + 2))
 
 print(float("1.3"))
 
@@ -92,7 +92,7 @@ class C(B):
 
 
 print(issubclass(A, C))
-
+"""
 
 
 """class A:
@@ -115,7 +115,7 @@ print(hasattr(a, 'A'))
 """
 
 
-class A:
+"""class A:
     def a(self):
         print('a')
 
@@ -186,5 +186,32 @@ print(list(foo))
 
 numbers = [i*i for i in range(5)]
 foo = list(filter(lambda x: x % 2, numbers)) # Inserta la línea de código aquí.
-print(foo)
+print(foo)"""
 
+
+
+"""import random
+
+a = random.randint(0, 100)
+b = random.choice(0 , 100, 3)
+c = random.randrange(10, 100,3)
+
+
+print(a, b, c)"""
+
+      
+      
+
+from datetime import datetime
+
+datetime_1 = datetime(2019, 11, 27, 11, 27, 22)
+datetime_2 = datetime(2019, 11, 27, 0, 0, 0)
+
+print(datetime_1 - datetime_2)
+
+from datetime import timedelta
+
+delta = timedelta(weeks = 1, days = 7, hours = 11)
+print(delta * 2)
+
+print   (delta.total_seconds())
