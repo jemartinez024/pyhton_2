@@ -83,3 +83,6 @@ datetime = datetime(2019, 11, 27, 11, 27, 22)
 print(datetime.strftime('%y/%B/%d %H:%M:%S'))
 
 from datetime import datetime  
+
+
+print   (datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
