@@ -85,4 +85,3 @@ print(datetime.strftime('%y/%B/%d %H:%M:%S'))
 from datetime import datetime  
 
 
-print   (datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
