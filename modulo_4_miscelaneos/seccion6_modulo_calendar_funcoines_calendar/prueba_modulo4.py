@@ -85,7 +85,3 @@ print(datetime.strftime('%y/%B/%d %H:%M:%S'))
 from datetime import datetime  
 
 
-prim = datetime(2019, 11, 27, 11, 27, 22)
-seg = datetime(2019, 11, 27, 11, 27, 23)
-print(prim < seg)
-
